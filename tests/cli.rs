@@ -552,3 +552,38 @@ fn directory_input_is_read() {
     let _ = row(&v, "s2");
     assert_eq!(v["snapshots"].as_array().unwrap().len(), 2);
 }
+
+/// Run the binary through `sh` with standard output closed (`>&-`) or sent to /dev/null.
+#[cfg(target_os = "linux")]
+fn via_sh(redirect: &str, args: &[&str]) -> std::process::Output {
+    let exe = assert_cmd::cargo::cargo_bin("ebs-snapshot-bill");
+    std::process::Command::new("sh")
+        .arg("-c")
+        .arg(format!("exec \"$0\" \"$@\" {redirect}"))
+        .arg(exe)
+        .args(args)
+        .output()
+        .unwrap()
+}
+
+#[cfg(target_os = "linux")]
+#[test]
+fn closed_stdout_is_exit_2() {
+    let n = fix("normal.json");
+    for args in [vec![n.to_str().unwrap()], vec!["--version"], vec!["--help"]] {
+        let o = via_sh(">&-", &args);
+        assert_eq!(o.status.code(), Some(2), "args {args:?}");
+        assert!(
+            String::from_utf8_lossy(&o.stderr).contains("could not write output"),
+            "args {args:?}"
+        );
+    }
+}
+
+#[cfg(target_os = "linux")]
+#[test]
+fn dev_null_stdout_is_exit_0() {
+    let n = fix("normal.json");
+    let o = via_sh(">/dev/null", &[n.to_str().unwrap()]);
+    assert_eq!(o.status.code(), Some(0));
+}

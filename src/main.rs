@@ -1,3 +1,6 @@
+#[allow(unsafe_code)]
+mod stdout_probe;
+
 use clap::Parser;
 use ebs_snapshot_bill::{run, Options};
 use std::io::{stdout, Write};
@@ -33,11 +36,26 @@ struct Cli {
     json: bool,
 }
 
+fn cannot_write() -> ExitCode {
+    let _ = writeln!(
+        std::io::stderr(),
+        "ebs-snapshot-bill: could not write output"
+    );
+    ExitCode::from(2)
+}
+
 fn main() -> ExitCode {
+    // Rust replaces a closed descriptor 1 with /dev/null before `main`; the probe
+    // recorded before that whether it was closed.
+    let stdout_closed = stdout_probe::stdout_was_closed_at_start();
     let cli = match Cli::try_parse() {
         Ok(c) => c,
         Err(e) => {
             let code = if e.use_stderr() { 2 } else { 0 };
+            // Help and version have nowhere to go; a usage error still reaches stderr.
+            if stdout_closed && code == 0 {
+                return cannot_write();
+            }
             let _ = e.print();
             return ExitCode::from(code);
         }
@@ -50,14 +68,11 @@ fn main() -> ExitCode {
         max_age_days: cli.max_age_days,
         json: cli.json,
     }) {
+        Ok(_) if stdout_closed => cannot_write(),
         Ok(text) => {
             let mut out = stdout().lock();
             if out.write_all(text.as_bytes()).is_err() || out.flush().is_err() {
-                let _ = writeln!(
-                    std::io::stderr(),
-                    "ebs-snapshot-bill: could not write output"
-                );
-                return ExitCode::from(2);
+                return cannot_write();
             }
             ExitCode::SUCCESS
         }
