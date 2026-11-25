@@ -7,6 +7,7 @@ Date: 2026-11-25. Platform: Linux. Toolchain: stable, rustc 1.99.0, cargo 1.99.0
 - `cargo clippy --all-targets --locked -- -D warnings`: clean (exit 0).
 - `cargo test --locked` (debug build): 68 passed, 0 failed, 0 ignored (30 lib, 2 main, 6 claims, 30 cli, 0 doc).
 - `cargo test --release --locked`: 68 passed, 0 failed, 0 ignored (30 lib, 2 main, 6 claims, 30 cli, 0 doc).
+- Tests: 68 passed, 0 failed (`cargo test --locked`).
 - Version 0.1.0. `rust-version` 1.85.
 
 This page records checks. It is not a guarantee and it is not a fuzz report.
