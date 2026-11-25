@@ -1,0 +1,8 @@
+{
+  "currency": "USD",
+  "region": "us-east-1",
+  "source": "https://aws.amazon.com/ebs/pricing/",
+  "date": "2026-11-09",
+  "snapshot_standard_per_gb_month": "0.05",
+  "snapshot_archive_per_gb_month": "0.0125"
+}

@@ -1,0 +1,11 @@
+{
+  "Snapshots": [
+    {
+      "SnapshotId": "snap-orphan1",
+      "VolumeId": "vol-ffffffff",
+      "VolumeSize": 4,
+      "StartTime": "2026-09-01T00:00:00.000Z",
+      "State": "completed"
+    }
+  ]
+}

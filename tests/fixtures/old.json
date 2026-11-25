@@ -1,0 +1,12 @@
+{
+  "Snapshots": [
+    {
+      "SnapshotId": "snap-old1",
+      "VolumeId": "vol-bbbb2222",
+      "VolumeSize": 20,
+      "StartTime": "2024-01-01T00:00:00.000Z",
+      "State": "completed",
+      "Description": "ancient"
+    }
+  ]
+}

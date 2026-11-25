@@ -1,0 +1,12 @@
+{
+  "Snapshots": [
+    {
+      "SnapshotId": "snap-normal1",
+      "VolumeId": "vol-aaaa1111",
+      "VolumeSize": 8,
+      "StartTime": "2026-10-01T00:00:00.000Z",
+      "State": "completed",
+      "Description": "daily"
+    }
+  ]
+}
