@@ -8,7 +8,6 @@ license = "MIT OR Apache-2.0"
 description = "Offline estimate of AWS EBS snapshot GB-month cost from describe-snapshots JSON"
 readme = "README.md"
 repository = "https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill"
-homepage = "https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill"
 documentation = "https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill"
 keywords = ["aws", "ebs", "snapshot", "cost", "cli"]
 categories = ["command-line-utilities"]
