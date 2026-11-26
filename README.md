@@ -1,5 +1,7 @@
 # ebs-snapshot-bill
 
+[![crates.io](https://img.shields.io/crates/v/ebs-snapshot-bill.svg)](https://crates.io/crates/ebs-snapshot-bill) [![downloads](https://img.shields.io/crates/d/ebs-snapshot-bill.svg)](https://crates.io/crates/ebs-snapshot-bill) [![CI](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill/actions/workflows/ci.yml/badge.svg)](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill/actions/workflows/ci.yml) [![PEPAI checked](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fqwpp7g79y4-maker%2Febs-snapshot-bill%2Fmain%2F.github%2Fbadge.json)](QUALITY.md) [![MSRV 1.85](https://img.shields.io/badge/MSRV-1.85-blue.svg)](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill/blob/main/Cargo.toml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill#license)
+
 ## Why
 
 Estimate **Amazon EBS snapshot** GB-month cost from a local `describe-snapshots`
@@ -93,6 +95,8 @@ by_volume roll-up.
 Prices change. The rates in `prices/us-east-1.json` are a dated copy (2026-11-09),
 so re-check them before you rely on a number. Fixes arrive as patches, see
 `CONTRIBUTING.md`. Security reports: see `SECURITY.md`. Changes are in `CHANGELOG.md`.
+
+After a release the tool is dormant: a new version appears only for a reported bug, a request, or a security problem. Security always comes first.
 
 ## Prices and responsibility
 

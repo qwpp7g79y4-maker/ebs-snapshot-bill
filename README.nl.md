@@ -1,5 +1,7 @@
 # ebs-snapshot-bill
 
+[![crates.io](https://img.shields.io/crates/v/ebs-snapshot-bill.svg)](https://crates.io/crates/ebs-snapshot-bill) [![downloads](https://img.shields.io/crates/d/ebs-snapshot-bill.svg)](https://crates.io/crates/ebs-snapshot-bill) [![CI](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill/actions/workflows/ci.yml/badge.svg)](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill/actions/workflows/ci.yml) [![PEPAI checked](https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fqwpp7g79y4-maker%2Febs-snapshot-bill%2Fmain%2F.github%2Fbadge.json)](QUALITY.md) [![MSRV 1.85](https://img.shields.io/badge/MSRV-1.85-blue.svg)](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill/blob/main/Cargo.toml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](https://github.com/qwpp7g79y4-maker/ebs-snapshot-bill#license)
+
 Schat de GB-maandkosten van **Amazon EBS-snapshots** uit een lokale
 `describe-snapshots`-JSON en toont oude of weesachtige (orphan) snapshots.
 De tool werkt offline: hij leest alleen lokale bestanden en gebruikt geen netwerk.
@@ -52,6 +54,8 @@ by_volume-overzicht.
 Prijzen veranderen. De tarieven in `prices/us-east-1.json` zijn een gedateerde
 kopie (2026-11-09); controleer ze voor je op een getal vertrouwt. Patches komen
 binnen zoals in `CONTRIBUTING.md` staat. Beveiligingsmeldingen: zie `SECURITY.md`.
+
+Na een release staat de tool in sluimermodus (dormant): een nieuwe versie komt er alleen bij een gemelde bug, een verzoek of een beveiligingsprobleem. Beveiliging gaat altijd voor.
 
 ## Prijzen en verantwoordelijkheid
 
