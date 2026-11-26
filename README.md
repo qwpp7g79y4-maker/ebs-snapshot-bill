@@ -15,7 +15,7 @@ The tests and the measured numbers are in `QUALITY.md`.
 
 ## Installation
 
-Version 0.1.0. From crates.io:
+Version 0.1.1. From crates.io:
 
 ```sh
 cargo install ebs-snapshot-bill

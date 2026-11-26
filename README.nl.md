@@ -10,13 +10,13 @@ Engelse versie: `README.md`. Tests en metingen: `QUALITY.nl.md`.
 
 ## Installatie
 
-Versie 0.1.0. Bouwen vanaf de bron (Rust 1.85+), vanuit een checkout:
+Versie 0.1.1. Bouwen vanaf de bron (Rust 1.85+), vanuit een checkout:
 
 ```sh
 cargo install --path .
 ```
 
-Zodra 0.1.0 op crates.io staat: `cargo install ebs-snapshot-bill`.
+Zodra 0.1.1 op crates.io staat: `cargo install ebs-snapshot-bill`.
 
 ## Aan de slag in 5 minuten
 

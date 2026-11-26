@@ -26,7 +26,7 @@ fn readme_sections() {
 fn changelog() {
     assert!(std::fs::read_to_string(root().join("CHANGELOG.md"))
         .unwrap()
-        .contains("0.1.0"));
+        .contains("0.1.1"));
 }
 #[test]
 fn licenses() {
