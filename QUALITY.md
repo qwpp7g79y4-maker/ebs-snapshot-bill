@@ -1,6 +1,6 @@
 # Quality
 
-pep: 8.6
+pep: 10
 
 Tested commit: ee67a3f (the code and tests; later commits only touch documents).
 Date: 2026-11-25. Platform: Linux. Toolchain: stable, rustc 1.99.0, cargo 1.99.0.
