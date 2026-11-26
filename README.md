@@ -35,7 +35,7 @@ ebs-snapshot-bill examples/old.json --max-age-days 30
 ebs-snapshot-bill examples/normal.json --json
 ```
 
-## Aan de slag in 5 minuten
+## Quickstart in 5 minutes
 
 1. Build or install the tool (see Installation).
 2. Run `ebs-snapshot-bill examples/normal.json`.
